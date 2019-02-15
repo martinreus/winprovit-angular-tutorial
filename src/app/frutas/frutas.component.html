@@ -1,0 +1,6 @@
+<ol>
+  <li *ngFor="let fruta of frutas">
+    {{ fruta.nome + ", preco: " + fruta.preco }}
+    <button (click)="enviarFruta(fruta)">Enviar {{ fruta.nome }}</button>
+  </li>
+</ol>
