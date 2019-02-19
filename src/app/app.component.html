@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-{{ title ? title : "" }}
+{{ title ? title : '' }}
 
-<app-frutas [frutas]="lista" (frutaClicado)="recebido($event)"></app-frutas>
+<app-frutas (frutaClicado)="recebido($event)"></app-frutas>
 
 <button type="button" (click)="clicado($event)">Cliquei</button>

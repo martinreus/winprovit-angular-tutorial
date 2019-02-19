@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Fruta } from './frutas/fruta';
+import { FrutasService } from './frutas/frutas.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'tutorial';
 
   variavel: string;
 
-  lista: Fruta[] = [{ nome: 'xuxu', preco: 3 }, { nome: 'ananas', preco: 5 }];
+  constructor() {}
+
+  ngOnInit(): void {}
 
   clicado(evento) {
     console.log('teste', evento);

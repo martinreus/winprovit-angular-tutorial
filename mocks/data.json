@@ -1,0 +1,16 @@
+{
+  "frutas": [
+    {
+      "nome": "ananas",
+      "preco": 43
+    },
+    {
+      "nome": "pera",
+      "preco": 32
+    },
+    {
+      "nome": "maçã",
+      "preco": 0.8
+    }
+  ]
+}
