@@ -8,7 +8,7 @@ import { FrutasService } from './frutas/frutas.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'tutorial';
+  title = 'AppComponent';
 
   variavel: string;
 

@@ -2,6 +2,8 @@
 
 {{ title ? title : '' }}
 
+<app-frutas-form></app-frutas-form>
+
 <app-frutas (frutaClicado)="recebido($event)"></app-frutas>
 
 <button type="button" (click)="clicado($event)">Cliquei</button>

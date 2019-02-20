@@ -14,6 +14,7 @@ export class FrutasService {
   }
 
   public postFruta(fruta: Fruta): Observable<Object> {
+    console.log('invocando o backend com ', fruta);
     return this.httpClient.post('/frutas', fruta);
   }
 }

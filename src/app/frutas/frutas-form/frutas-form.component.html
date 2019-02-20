@@ -1,0 +1,28 @@
+<div><span>Crie / edite sua fruta aqui</span></div>
+<form [formGroup]="frutaForm">
+  <div>
+    Nome:
+    <input #nome formControlName="nome" type="text" />
+    <!-- 
+      Não é praxe fazer assim; quando adicionarmos a lib de componentes, será feito pela propria componente de input. 
+      Fica apenas como exemplo de como verificat se formulário é válido.
+    -->
+    <span *ngIf="!frutaForm.controls.nome.valid && !frutaForm.controls.nome.pristine">
+      Nome é obrigatório
+    </span>
+    <div>Você escreveu {{ nome.value }}</div>
+  </div>
+  <div>
+    Preço:
+    <input formControlName="preco" type="number" />
+    <span *ngIf="!frutaForm.controls.preco.valid && !frutaForm.controls.preco.pristine">
+      Preço deve ser superior a 0
+    </span>
+  </div>
+  <!--
+    Podemos previnir o click usando uma expressão antes da chamada da função gravar();
+  -->
+  <button (click)="frutaForm.valid && gravar()">Gravar</button>
+</form>
+
+<span *ngIf="bingo">Bingo!</span>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { Fruta } from './fruta';
-import { FrutasService } from './frutas.service';
+import { Fruta } from '../fruta';
+import { FrutasService } from '../frutas.service';
 import { Observable, Subscription, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 
