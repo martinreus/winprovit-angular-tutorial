@@ -22,6 +22,8 @@ export class FrutasFormComponent implements OnInit, OnDestroy {
       preco: [5, Validators.min(0)]
     });
 
+    // value changes é um observable, ao qual podemos nos subscrever para receber mudanças no campo 'nome' do frutaForm.
+    // importante também sempre fazer o takeUntil(this.destroy), pois temos um subscribe aqui.
     this.frutaForm.controls.nome.valueChanges.pipe(takeUntil(this.destroy)).subscribe(nome => {
       if (nome === 'bingo') {
         this.bingo = true;
@@ -33,7 +35,9 @@ export class FrutasFormComponent implements OnInit, OnDestroy {
     if (this.frutaForm.valid) {
       this.service
         .postFruta(this.frutaForm.value)
+        // lembrar sempre do takeUntil
         .pipe(takeUntil(this.destroy))
+        // tem que haver subscrição, senão a chamada ao backend não é realizada! (por causa do observable)
         .subscribe(result => console.log(result), error => console.log('erro do backend', error));
     }
   }
